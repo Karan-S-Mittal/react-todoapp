@@ -4,25 +4,31 @@ import Form from "./Form";
 import "./index.css";
 
 
+const Header = () => {
+  return (
+    <div>
+      <h1> To-Do-App </h1>
+      <p>The app provides a simple functionality if adding and removing tasks.</p>
+    </div>
+  )
+}
+
+const Footer = () => {
+  return (
+    <div>
+      <h3>Karan Mittal</h3>
+      <p>Data Scientist | Full Stack Web Developer | Writer | Technology Enthusiast</p>
+    </div>
+  )
+}
+
 class App extends Component {
 
   state = {
     characters: [
       {
-        name: 'Charlie',
-        job: 'Janitor',
-      },
-      {
-        name: 'Mac',
-        job: 'Bouncer',
-      },
-      {
-        name: 'Dee',
-        job: 'Aspring actress',
-      },
-      {
-        name: 'Dennis',
-        job: 'Bartender',
+        name: 'Task Title',
+        job: 'Task Description',
       },
     ],
   };
@@ -46,8 +52,13 @@ class App extends Component {
 
     return (
       <div className="container">
+        <Header />
+        <hr />
         <Table characterData={characters} removeCharachter={this.removeCharachter} />
+        <hr/>
         <Form handleSubmit={this.handleSubmit} />
+        <hr/>
+        <Footer />
       </div>
     )
   }
